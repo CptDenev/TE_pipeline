@@ -1,0 +1,35 @@
+// ─────────────────────────────────────────────────────────────
+// TRE — GPS Heightmap Remapping
+// Houdini VEX · Wrangle SOP
+// ─────────────────────────────────────────────────────────────
+//
+// Normalizes raw elevation data from Mapbox terrain tiles
+// to a 16-bit range suitable for UE5 landscape import.
+//
+// Input:  point attribute @height (raw elevation in meters)
+// Output: @height remapped to [0.0, 1.0], @P.y updated
+//
+// Usage: drop on a Height Field or geometry after
+//        Mapbox data ingestion, before heightmap export.
+// ─────────────────────────────────────────────────────────────
+
+// --- Parameters (promote to spare inputs for HDA use) --------
+float min_elev   = chf("min_elevation");   // e.g. -500.0 (ocean floor)
+float max_elev   = chf("max_elevation");   // e.g. 6000.0 (peak)
+float sea_offset = chf("sea_level_offset");// vertical shift if needed
+
+// --- Read raw elevation --------------------------------------
+float raw = f@height + sea_offset;
+
+// --- Clamp to defined range ----------------------------------
+raw = clamp(raw, min_elev, max_elev);
+
+// --- Remap to [0, 1] -----------------------------------------
+float normalized = (raw - min_elev) / (max_elev - min_elev);
+
+// --- Write back ----------------------------------------------
+f@height = normalized;
+v@P.y    = normalized;  // update geometry for viewport preview
+
+// --- Debug attribute (remove before export) ------------------
+f@raw_elevation = raw;
