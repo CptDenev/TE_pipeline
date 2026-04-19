@@ -5,6 +5,8 @@ A documentary production pipeline built from scratch in 9 months with a team of 
 
 ---
 
+![Pipeline Overview](pipeline_overview.svg)
+
 ## Overview
 
 TRE is a documentary production depicting the geological evolution of Earth across deep time — from primordial landscapes to contemporary biomes. Scientific plausibility was a hard requirement: environments needed to hold up under expert review without claiming photorealism. The real challenge was building a real-time pipeline that could deliver this level of credibility across radically different geological eras, with a small team, in nine months.
