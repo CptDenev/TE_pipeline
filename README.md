@@ -45,7 +45,7 @@ Every decision documented in this repo was made under production constraints, no
 The production required geologically accurate terrain (not just visually plausible landscapes), but environments defensible against scientific review. Sculpting terrain by hand introduced too much artistic bias and was incompatible with the documentary's credibility requirements.
 
 ### Approach
-Real-world elevation data was sourced from Mapbox via an old lab node originally built for Houdini 18 and 19. The node was incompatible with Houdini 21 — rather than finding a workaround or switching data source, the node source was patched directly to restore compatibility. The pipeline converts GPS coordinate ranges into normalized height data, then I implemented a way to applies geological-scale smoothing and erosion passes, and exports heightmaps compatible with UE5's landscape system.
+Real-world elevation data was sourced from Mapbox via an old lab node originally built for Houdini 18 and 19. The node was incompatible with Houdini 21 — rather than finding a workaround or switching data source, the node source was patched directly to restore compatibility. The pipeline converts GPS coordinate ranges into normalized height data, then applied geological-scale smoothing and erosion passes, and exports heightmaps compatible with UE5's landscape system.
 
 ### Implementation
 - Diagnosed Houdini 19 → 21 compatibility breakage in Mapbox lab node source, patched and rebuilt
@@ -63,7 +63,7 @@ A side benefit: going into the source gave full visibility into the data process
 ## 2. Dynamic Landscape Brush Projection
 
 ### Problem
-UE5's native landscape brush projection tools operate statically — brushes are applied at edit time and baked into the landscape data. TE required runtime-dynamic terrain painting to support animated geological transitions: ice sheet advance and retreat, volcanic ash deposition, sediment layering, errosion on moutains.
+UE5's native landscape brush projection tools operate statically — brushes are applied at edit time and baked into the landscape data. TE required runtime-dynamic terrain painting to support animated geological transitions: ice sheet advance and retreat, volcanic ash deposition, sediment layering, erosion on moutains.
 
 ### Approach
 An existing landscape brush projection plugin was modified and extended to support a distinction between fixed brushes (baked at edit time, zero runtime cost) and dynamic brushes (evaluated on utilization and not on every frame, used for animated transitions). The plugin was also patched to address production-specific limitations. Control is entirely Blueprint-driven — no C++ modifications were required.
@@ -112,7 +112,7 @@ An automatic material layer system was built by dissecting an existing landscape
 - Base landscape master material deconstructed to add layer blending nodes
 - Custom material functions compute slope (from vertex normal), normalized world height, and curvature from adjacent sample comparison
 - Each geological layer (bare rock, scree, sediment, soil, ice) has an activation curve driven by these parameters
-- Layer transitions use distance-field-based dithering to avoid hard edges at geological boundaries and can be call in sequencer
+- Layer transitions use distance-field-based dithering to avoid hard edges at geological boundaries and can be called
 - Manual override channel preserved for art direction on hero areas
 - Material Parameter Collection (MPC) exposes global biome lerp values — allows shot-level look adjustments (color temperature, surface wetness, overall biome character) without touching the material graph
 - Full dynamic update at runtime — terrain material responds immediately to landscape deformation (see section 2)
@@ -233,7 +233,7 @@ The ACES choice had a concrete payoff downstream: Lumen's highlight response in 
 | Tool | Usage |
 |------|-------|
 | Unreal Engine 5 | Real-time pipeline, final output, PCG, material system |
-| Houdini (VEX, Python, SOP) | GPS data processing, heightmap generation, errosion simulation |
+| Houdini (VEX, Python, SOP) | GPS data processing, heightmap generation, erosion simulation |
 | Blender | Asset modeling, photogrammetry cleanup, asset verification |
 | Blueprint (UE5) | Runtime systems, cinematic controller, landscape brush logic |
 | HLSL / UE5 Material Graph | All shader and material function development |

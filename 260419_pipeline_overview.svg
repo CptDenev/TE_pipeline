@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="1000" height="680" font-family="'Courier New', monospace">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#4A90D9"/>
+    </marker>
+    <marker id="arrow-light" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#6BA8E0"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#888"/>
+    </marker>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#00000030"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="680" fill="#0D1117"/>
+  
+  <!-- Grid lines subtle -->
+  <g stroke="#1A2332" stroke-width="1">
+    <line x1="0" y1="100" x2="1000" y2="100"/>
+    <line x1="0" y1="220" x2="1000" y2="220"/>
+    <line x1="0" y1="360" x2="1000" y2="360"/>
+    <line x1="0" y1="490" x2="1000" y2="490"/>
+    <line x1="0" y1="600" x2="1000" y2="600"/>
+  </g>
+
+  <!-- Title -->
+  <text x="500" y="38" text-anchor="middle" font-size="15" fill="#E6EDF3" letter-spacing="4" font-weight="bold">TRE — PIPELINE ARCHITECTURE</text>
+  <text x="500" y="58" text-anchor="middle" font-size="10" fill="#4A90D9" letter-spacing="3">9 INTERCONNECTED R&amp;D SYSTEMS · UNREAL ENGINE 5 · HOUDINI</text>
+  <line x1="200" y1="70" x2="800" y2="70" stroke="#4A90D9" stroke-width="1" opacity="0.4"/>
+
+  <!-- LAYER LABELS -->
+  <text x="18" y="163" font-size="8" fill="#4A90D9" letter-spacing="2" transform="rotate(-90, 18, 163)">DATA INPUT</text>
+  <text x="18" y="298" font-size="8" fill="#4A90D9" letter-spacing="2" transform="rotate(-90, 18, 298)">TERRAIN</text>
+  <text x="18" y="435" font-size="8" fill="#4A90D9" letter-spacing="2" transform="rotate(-90, 18, 435)">MATERIALS</text>
+  <text x="18" y="556" font-size="8" fill="#4A90D9" letter-spacing="2" transform="rotate(-90, 18, 556)">OUTPUT</text>
+
+  <!-- ═══════════════ ROW 1 — DATA INPUT ═══════════════ -->
+
+  <!-- 01 GPS Data Pipeline -->
+  <rect x="340" y="95" width="320" height="70" rx="3" fill="#0F1E30" stroke="#4A90D9" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="340" y="95" width="6" height="70" rx="2" fill="#4A90D9"/>
+  <text x="360" y="120" font-size="9" fill="#4A90D9" letter-spacing="1">01</text>
+  <text x="380" y="120" font-size="11" fill="#E6EDF3" font-weight="bold">GPS DATA PIPELINE</text>
+  <text x="360" y="140" font-size="9" fill="#7D8FA1">Houdini · Mapbox · VEX remapping</text>
+  <text x="360" y="155" font-size="9" fill="#4A6A8A">→ 16-bit heightmap export for UE5</text>
+
+  <!-- ═══════════════ ROW 2 — TERRAIN ═══════════════ -->
+
+  <!-- 02 Dynamic Landscape Brush -->
+  <rect x="80" y="230" width="280" height="70" rx="3" fill="#0F1E30" stroke="#4A90D9" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="80" y="230" width="6" height="70" rx="2" fill="#4A90D9"/>
+  <text x="100" y="255" font-size="9" fill="#4A90D9" letter-spacing="1">02</text>
+  <text x="120" y="255" font-size="11" fill="#E6EDF3" font-weight="bold">DYNAMIC BRUSH PROJECTION</text>
+  <text x="100" y="273" font-size="9" fill="#7D8FA1">Plugin-modified · Blueprint-driven</text>
+  <text x="100" y="288" font-size="9" fill="#4A6A8A">→ Animated geological transitions</text>
+
+  <!-- 04 Auto-Landscape Material -->
+  <rect x="640" y="230" width="280" height="70" rx="3" fill="#0F1E30" stroke="#4A90D9" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="640" y="230" width="6" height="70" rx="2" fill="#4A90D9"/>
+  <text x="660" y="255" font-size="9" fill="#4A90D9" letter-spacing="1">04</text>
+  <text x="680" y="255" font-size="11" fill="#E6EDF3" font-weight="bold">AUTO-LANDSCAPE MATERIAL</text>
+  <text x="660" y="273" font-size="9" fill="#7D8FA1">Slope · Height · Curvature rules</text>
+  <text x="660" y="288" font-size="9" fill="#4A6A8A">→ Procedural layer assignment</text>
+
+  <!-- ═══════════════ ROW 3 — MATERIALS ═══════════════ -->
+
+  <!-- 03 Sky & Atmosphere -->
+  <rect x="50" y="375" width="200" height="70" rx="3" fill="#0F1520" stroke="#2E5A8A" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="50" y="375" width="6" height="70" rx="2" fill="#2E5A8A"/>
+  <text x="70" y="400" font-size="9" fill="#4A90D9" letter-spacing="1">03</text>
+  <text x="90" y="400" font-size="11" fill="#E6EDF3" font-weight="bold">SKY &amp; ATMOSPHERE</text>
+  <text x="70" y="418" font-size="9" fill="#7D8FA1">Preset system · Era transitions</text>
+  <text x="70" y="433" font-size="9" fill="#4A6A8A">→ BP_SkyCinematic sequencer</text>
+
+  <!-- 05 Glitter Shader -->
+  <rect x="290" y="375" width="200" height="70" rx="3" fill="#0F1520" stroke="#2E5A8A" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="290" y="375" width="6" height="70" rx="2" fill="#2E5A8A"/>
+  <text x="310" y="400" font-size="9" fill="#4A90D9" letter-spacing="1">05</text>
+  <text x="330" y="400" font-size="11" fill="#E6EDF3" font-weight="bold">GLITTER SHADER</text>
+  <text x="310" y="418" font-size="9" fill="#7D8FA1">Sand &amp; Snow · Weta-inspired</text>
+  <text x="310" y="433" font-size="9" fill="#4A6A8A">→ Screen-space normal perturbation</text>
+
+  <!-- 07 PBR Standardization -->
+  <rect x="530" y="375" width="200" height="70" rx="3" fill="#0F1520" stroke="#2E5A8A" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="530" y="375" width="6" height="70" rx="2" fill="#2E5A8A"/>
+  <text x="550" y="400" font-size="9" fill="#4A90D9" letter-spacing="1">07</text>
+  <text x="570" y="400" font-size="11" fill="#E6EDF3" font-weight="bold">PBR STANDARDIZATION</text>
+  <text x="550" y="418" font-size="9" fill="#7D8FA1">Albedo · Roughness · Normals · SSS</text>
+  <text x="550" y="433" font-size="9" fill="#4A6A8A">→ Baseline for all materials</text>
+
+  <!-- 08 Forest Biome Material -->
+  <rect x="770" y="375" width="200" height="70" rx="3" fill="#0F1520" stroke="#2E5A8A" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="770" y="375" width="6" height="70" rx="2" fill="#2E5A8A"/>
+  <text x="790" y="400" font-size="9" fill="#4A90D9" letter-spacing="1">08</text>
+  <text x="810" y="400" font-size="11" fill="#E6EDF3" font-weight="bold">FOREST BIOME MATERIAL</text>
+  <text x="790" y="418" font-size="9" fill="#7D8FA1">Biome ID blend · Era transitions</text>
+  <text x="790" y="433" font-size="9" fill="#4A6A8A">→ PCG + hero mesh unified</text>
+
+  <!-- ═══════════════ ROW 4 — OUTPUT ═══════════════ -->
+
+  <!-- 06 PCG Vegetation -->
+  <rect x="280" y="505" width="220" height="70" rx="3" fill="#0A1A0F" stroke="#2A6A40" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="280" y="505" width="6" height="70" rx="2" fill="#2A6A40"/>
+  <text x="300" y="530" font-size="9" fill="#4A9A60" letter-spacing="1">06</text>
+  <text x="320" y="530" font-size="11" fill="#E6EDF3" font-weight="bold">PCG VEGETATION &amp; ROCKS</text>
+  <text x="300" y="548" font-size="9" fill="#7D8FA1">12 biomes · Terrain-driven rules</text>
+  <text x="300" y="563" font-size="9" fill="#4A6A8A">→ Density curves per era</text>
+
+  <!-- 09 Color Pipeline -->
+  <rect x="540" y="505" width="220" height="70" rx="3" fill="#1A0F0A" stroke="#8A4A20" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="540" y="505" width="6" height="70" rx="2" fill="#8A4A20"/>
+  <text x="560" y="530" font-size="9" fill="#D07040" letter-spacing="1">09</text>
+  <text x="580" y="530" font-size="11" fill="#E6EDF3" font-weight="bold">COLOR PIPELINE</text>
+  <text x="560" y="548" font-size="9" fill="#7D8FA1">ACES · Real/CG integration</text>
+  <text x="560" y="563" font-size="9" fill="#4A6A8A">→ Lumen calibration per era</text>
+
+  <!-- ═══════════════ ARROWS ═══════════════ -->
+
+  <!-- 01 → 02 (GPS → Dynamic Brush) -->
+  <path d="M 450 165 L 300 230" stroke="#4A90D9" stroke-width="1.2" fill="none" marker-end="url(#arrow)" opacity="0.7"/>
+  <!-- 01 → 04 (GPS → Auto-Landscape) -->
+  <path d="M 550 165 L 720 230" stroke="#4A90D9" stroke-width="1.2" fill="none" marker-end="url(#arrow)" opacity="0.7"/>
+
+  <!-- 02 ↔ 04 (Dynamic Brush ↔ Auto-Landscape) — bidirectional -->
+  <path d="M 360 268 L 640 268" stroke="#4A90D9" stroke-width="1.2" fill="none" marker-end="url(#arrow)" opacity="0.5" stroke-dasharray="4,3"/>
+  <path d="M 640 278 L 360 278" stroke="#4A90D9" stroke-width="1.2" fill="none" marker-end="url(#arrow)" opacity="0.5" stroke-dasharray="4,3"/>
+
+  <!-- 04 → 05 (Auto-Landscape → Glitter) -->
+  <path d="M 720 300 L 450 375" stroke="#6BA8E0" stroke-width="1" fill="none" marker-end="url(#arrow-light)" opacity="0.6"/>
+  <!-- 04 → 06 (terrain attributes → PCG) -->
+  <path d="M 780 300 L 450 505" stroke="#2A6A40" stroke-width="1.2" fill="none" marker-end="url(#arrow)" opacity="0.5" stroke-dasharray="5,3"/>
+
+  <!-- 07 → 05 (PBR → Glitter) -->
+  <path d="M 530 410 L 490 410" stroke="#888" stroke-width="1" fill="none" marker-end="url(#arrow-gray)" opacity="0.5"/>
+  <!-- 07 → 08 (PBR → Forest Biome) -->
+  <path d="M 730 410 L 770 410" stroke="#888" stroke-width="1" fill="none" marker-end="url(#arrow-gray)" opacity="0.5"/>
+
+  <!-- 08 → 06 (Forest Biome → PCG) -->
+  <path d="M 870 445 L 500 505" stroke="#2A6A40" stroke-width="1" fill="none" marker-end="url(#arrow)" opacity="0.5"/>
+
+  <!-- 03 → 09 (Sky → Color Pipeline) -->
+  <path d="M 200 445 L 200 580 L 540 560" stroke="#8A4A20" stroke-width="1" fill="none" marker-end="url(#arrow)" opacity="0.5" stroke-dasharray="4,3"/>
+
+  <!-- 09 ← all (Color is a global layer) -->
+  <path d="M 650 505 L 650 445" stroke="#8A4A20" stroke-width="1" fill="none" marker-end="url(#arrow)" opacity="0.4" stroke-dasharray="4,3"/>
+
+  <!-- ═══════════════ LEGEND ═══════════════ -->
+  <rect x="220" y="615" width="560" height="52" rx="3" fill="#0D1117" stroke="#1A2332" stroke-width="1"/>
+  <text x="500" y="633" text-anchor="middle" font-size="8" fill="#4A6A8A" letter-spacing="2">LEGEND</text>
+  <line x1="240" y1="645" x2="268" y2="645" stroke="#4A90D9" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="274" y="649" font-size="8" fill="#7D8FA1">direct data flow</text>
+  <line x1="380" y1="645" x2="408" y2="645" stroke="#4A90D9" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <text x="414" y="649" font-size="8" fill="#7D8FA1">shared attributes</text>
+  <line x1="550" y1="645" x2="578" y2="645" stroke="#8A4A20" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <text x="584" y="649" font-size="8" fill="#7D8FA1">color / render scope</text>
+  <line x1="240" y1="659" x2="268" y2="659" stroke="#2A6A40" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <text x="274" y="663" font-size="8" fill="#7D8FA1">population rules (08→06)</text>
+  <line x1="420" y1="659" x2="448" y2="659" stroke="#2A6A40" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <text x="454" y="663" font-size="8" fill="#7D8FA1">terrain attributes (04→06)</text>
+
+</svg>
