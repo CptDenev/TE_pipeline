@@ -5,7 +5,7 @@ A documentary production pipeline built from scratch in 9 months with a team of 
 
 ---
 
-![Pipeline Overview](pipeline_overview.svg)
+![Pipeline Overview](260419_pipeline_overview.svg)
 
 ## Overview
 
