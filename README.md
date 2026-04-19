@@ -1,7 +1,7 @@
-# TE — Procedural Earth Evolution
+# TE - Procedural Earth Evolution
 ### Real-Time Pipeline · Unreal Engine 5 · Houdini · Blender
 
-A documentary production pipeline built from scratch in 9 months with a team of 4 — case study of nine interconnected R&D systems.
+A documentary production pipeline built from scratch in 9 months with a team of 4 - case study of nine interconnected R&D systems.
 
 ---
 
@@ -9,7 +9,7 @@ A documentary production pipeline built from scratch in 9 months with a team of 
 
 ## Overview
 
-TRE is a documentary production depicting the geological evolution of Earth across deep time — from primordial landscapes to contemporary biomes. Scientific plausibility was a hard requirement: environments needed to hold up under expert review without claiming photorealism. The real challenge was building a real-time pipeline that could deliver this level of credibility across radically different geological eras, with a small team, in nine months.
+TRE is a documentary production depicting the geological evolution of Earth across deep time - from primordial landscapes to contemporary biomes. Scientific plausibility was a hard requirement: environments needed to hold up under expert review without claiming photorealism. The real challenge was building a real-time pipeline that could deliver this level of credibility across radically different geological eras, with a small team, in nine months.
 
 The full pipeline was built around Unreal Engine 5 rather than traditional offline rendering. This decision shaped every technical choice downstream: shader complexity, asset density, memory budgets, and transition systems all had to perform at runtime — no render farm to hide behind.
 
